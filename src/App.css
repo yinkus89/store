@@ -1,4 +1,4 @@
-/* Global Styles */
+/* src/App.css */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,113 +6,75 @@ body {
   background-color: #f4f4f4;
 }
 
-/* Navbar and Sidebar */
-.navbar,
-.sidebar {
+.navbar {
   background-color: #333;
-  color: #fff;
+  color: white;
   padding: 1rem;
+  text-align: center;
 }
 
-.navbar a,
-.sidebar a {
-  color: #fff;
+.navbar a {
+  color: white;
+  margin: 0 15px;
   text-decoration: none;
-  margin-right: 1rem;
 }
 
-/* Product List */
-.product-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
+.sidebar {
+  width: 200px;
+  background-color: #f4f4f4;
   padding: 1rem;
+  position: fixed;
+  height: 100%;
+}
+
+.app-layout {
+  display: flex;
+}
+
+main {
+  margin-left: 220px; /* Sidebar width */
+  padding: 1rem;
+  flex: 1;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.products-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .product-card {
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 1rem;
   padding: 1rem;
+  width: 200px;
   text-align: center;
-  border-radius: 8px;
-  background-color: #fff; /* White background for product card */
-  transition: box-shadow 0.3s;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.product-card:hover {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+.product-card img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Footer Styling */
-.footer {
-  background-color: #333;
-  color: #fff;
-  padding: 1.5rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: auto;
-}
-
-.footer-links a,
-.social-media a {
-  color: #ddd;
-  margin: 0 1rem;
-  text-decoration: none;
-  padding: 5px; /* Padding for better click area */
-  transition: color 0.3s;
-}
-
-.footer-links a:hover,
-.social-media a:hover {
-  color: #fff;
-  text-decoration: underline; /* Underline effect on hover */
-}
-
-/* Checkout Styles */
-.checkout {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-}
-
-h2,
-h3 {
-  text-align: center;
-}
-
-/* Input Styles */
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-/* Button Styles */
-.button {
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: #0056b3;
-}
-
-/* Product Detail Styles */
 .product-detail-container {
   max-width: 600px;
   margin: 2rem auto;
@@ -123,27 +85,79 @@ textarea {
   text-align: center;
 }
 
-.product-detail-container img {
-  max-width: 100%;
-  height: auto;
+.cart-container {
+  margin: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .product-list {
-    grid-template-columns: 1fr; /* Stack products on smaller screens */
-  }
+.checkout {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: auto;
+}
 
-  .checkout {
-    padding: 15px; /* Reduce padding on smaller screens */
-  }
+.checkout h2,
+.checkout h3 {
+  text-align: center;
+}
 
-  .navbar,
-  .sidebar {
-    padding: 0.5rem; /* Adjust padding for smaller screens */
-  }
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-  .footer {
-    padding: 1rem; /* Adjust footer padding for smaller screens */
-  }
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+/* src/App.css or src/components/Header.css */
+.header {
+  text-align: center;
+  background-color: #f8f8f8; /* Background color */
+  padding: 20px; /* Padding for the header */
+}
+
+.banner {
+  width: 100%; /* Make banner responsive */
+  max-height: 200px; /* Set a maximum height for the banner */
+  object-fit: cover; /* Ensure the image covers the area without stretching */
+}
+
+.logo {
+  max-width: 150px; /* Limit logo size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+h1 {
+  font-size: 2rem; /* Set header font size */
+  margin-top: 10px; /* Space between logo and title */
+}
+/* Add this to your CSS file */
+.search-bar {
+  margin: 20px 0;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
