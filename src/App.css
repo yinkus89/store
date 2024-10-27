@@ -1,0 +1,149 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Navbar and Sidebar */
+.navbar,
+.sidebar {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+.navbar a,
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+/* Product List */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #fff; /* White background for product card */
+  transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-links a,
+.social-media a {
+  color: #ddd;
+  margin: 0 1rem;
+  text-decoration: none;
+  padding: 5px; /* Padding for better click area */
+  transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.social-media a:hover {
+  color: #fff;
+  text-decoration: underline; /* Underline effect on hover */
+}
+
+/* Checkout Styles */
+.checkout {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+h2,
+h3 {
+  text-align: center;
+}
+
+/* Input Styles */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button Styles */
+.button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Product Detail Styles */
+.product-detail-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product-detail-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: 1fr; /* Stack products on smaller screens */
+  }
+
+  .checkout {
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  .navbar,
+  .sidebar {
+    padding: 0.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .footer {
+    padding: 1rem; /* Adjust footer padding for smaller screens */
+  }
+}
